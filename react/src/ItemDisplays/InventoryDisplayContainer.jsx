@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form, FormGroup, Input, Row, Col, InputGroup, InputGroupAddon, Card, CardHeader, CardBlock, CardFooter } from 'reactstrap';
 import { rootURL } from '../restInfo.js';
 import UncontrolledTextInput from '../UnControlledTextInput.jsx';
 import InventoryDisplayItem from './InventoryDisplayItem.jsx';
@@ -55,26 +54,26 @@ export default class InventoryDisplayContainer extends React.Component {
 
     render() {
         return (
-            <Card>
-                <CardHeader>{"Container " + this.props.itemInfo.item_id + " Details"}</CardHeader>
-                <CardBlock>
-                    <Row>
-                        <InputGroup>
-                            <InputGroupAddon >Container Serial: </InputGroupAddon>
+            <div>
+                <div>{"Container " + this.props.itemInfo.item_id + " Details"}</div>
+                <div>
+                    <div>
+                        <div>
+                            <divAddon >Container Serial: </divAddon>
                             {/* <UncontrolledTextInput
                                 onBlur={this.container_snChanged}
                                 id="containerSerialID"
                                 defaultText={this.props.containerInfo.container_sn}
                             /> */}
                             <input type="text" value={this.state.containerInfo.container_sn} onChange={this.container_snChanged}  />
-                        </InputGroup>
-                    </Row>
+                        </div>
+                    </div>
                     <InventoryDisplayItem
                         updateItemInfo={this.updateContainerRow}
                         defaultItemInfo={this.props.itemInfo}
                     />
-                </CardBlock>
-            </Card>
+                </div>
+            </div>
         );
     }
 };

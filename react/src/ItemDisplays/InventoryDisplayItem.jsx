@@ -1,12 +1,9 @@
 import React from 'react';
 import ItemDisplay from './ItemDisplay.jsx';
-import { Form, FormGroup, Input, Row, Col, InputGroup, InputGroupAddon, Button } from 'reactstrap';
 import { rootURL } from '../restInfo.js';
 import UncontrolledTextInput from '../UnControlledTextInput.jsx';
 import UnControlledSelectDDL from '../UnControlledSelectDDL.jsx';
 import Checkbox from '../CheckBox/Checkbox.js';
-import 'bootstrap/dist/css/bootstrap.css';
-import "../Checkboxes.css"; 
 import Binder from '../Binder.js';
 
 
@@ -130,38 +127,38 @@ export default class InventoryDisplayItem extends React.Component {
     render() {
         return (
             <div className="form-check mb-2 mr-sm-2 mb-sm-0">
-                <Row>
-                    <InputGroup>
-                        <InputGroupAddon > Manufacturer: </InputGroupAddon>
+                <div>
+                    <div>
+                        <divAddon > Manufacturer: </divAddon>
                         {/* <UncontrolledTextInput
                             onBlur={this.manufacturerChanged}
                             id="manufacturerID"
                             defaultText={this.props.defaultItemInfo.manufacturer}
                         /> */}
                         <input type="text" value={this.state.manufacturer} onChange={this.manufacturerChanged}  />
-                    </InputGroup>
-                    <InputGroup>
-                        <InputGroupAddon >Brand: </InputGroupAddon>
+                    </div>
+                    <div>
+                        <divAddon >Brand: </divAddon>
                         {/* <UncontrolledTextInput
                             onBlur={this.brandChanged}
                             id="brandID"
                             defaultText={this.props.defaultItemInfo.brand}
                         /> */}
                         <input type="text" value={this.state.brand} onChange={this.brandChanged}  />
-                    </InputGroup>
-                </Row>
-                <Row>
-                    <InputGroup>
-                        <InputGroupAddon >Description: </InputGroupAddon>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <divAddon >Description: </divAddon>
                         {/* <UncontrolledTextInput
                             onBlur={this.descriptionChanged}
                             id="descriptionID"
                             defaultText={this.props.defaultItemInfo.description}
                         /> */}
                         <input type="text" value={this.state.description} onChange={this.descriptionChanged}  />
-                    </InputGroup>
-                    <InputGroup>
-                        <InputGroupAddon >Rentable: </InputGroupAddon>
+                    </div>
+                    <div>
+                        <divAddon >Rentable: </divAddon>
                         {/* <select
                             // value={this.props.defaultItemInfo.is_rentable}
                             defaultValue={this.props.defaultItemInfo.is_rentable}
@@ -191,20 +188,20 @@ export default class InventoryDisplayItem extends React.Component {
                                 Info Checkbox
                             </label>
                         </div>    */}
-                    </InputGroup>
-                </Row>
-                <Row>
-                    <InputGroup>
-                        <InputGroupAddon >On a Rig: </InputGroupAddon>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <divAddon >On a Rig: </divAddon>
                         <label className="form-check-label">
                             <input type="checkbox" className="form-check-input" checked={this.state.is_on_rig} onChange={this.is_on_rigChanged}  
                             />
                         </label>
-                    </InputGroup>
-                </Row>
-                <Row>
-                    <Button size="lg" color="primary" onClick={this.updateItemInfo}>Save</Button>
-                </Row>
+                    </div>
+                </div>
+                <div>
+                    <button size="lg" color="primary" onClick={this.updateItemInfo}>Save</button>
+                </div>
             </div>
         );
     }

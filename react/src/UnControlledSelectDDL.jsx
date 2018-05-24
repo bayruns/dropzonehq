@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, Input, Row, Col, InputGroup, InputGroupAddon } from 'reactstrap';
+
 import PropTypes from 'prop-types';
 import './UnControlledTextInput.css';
 

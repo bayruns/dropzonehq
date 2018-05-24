@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Card, CardHeader, CardBlock } from 'reactstrap';
+
 
 export default class StatDisplay extends React.Component {
     constructor(props) {
@@ -13,16 +13,16 @@ export default class StatDisplay extends React.Component {
     render() {
         return (
             <div>
-                <Row>
-                    <Col>
-                        <Card >
-                            <CardHeader>{this.state.headerText}</CardHeader>
-                            <CardBlock>
+                <div>
+                    <div>
+                        <div >
+                            <div>{this.state.headerText}</div>
+                            <div>
                                 {this.state.statsToDisplay}
-                            </CardBlock>
-                        </Card>
-                    </Col>
-                </Row>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

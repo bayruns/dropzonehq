@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import ModalWithVerify from '../ModalWithVerify.jsx';
 
 
@@ -32,21 +31,21 @@ export default class RentButton extends React.Component {
 
   render() {
     const modalContent =
-      <Form>        
-        <InputGroup>
-          <InputGroupAddon >Renter Name </InputGroupAddon>
-          <Input id="renterName" type="name" pattern="[a-z]*" onChange={this.renterNameChange} />
-        </InputGroup>
-      </Form>;
+      <form>        
+        <div>
+          <divAddon >Renter Name </divAddon>
+          <div id="renterName" type="name" pattern="[a-z]*" onChange={this.renterNameChange} />
+        </div>
+      </form>;
     return (
-      <ModalWithVerify
+      <divWithVerify
         mainButtonColor="primary"
         mainButtonText="Rent"
         modalButtonText="Rent"
         modalTitle="Rent Item"
         ID="Rent"
         modalContent={modalContent}
-        popoverTitle="Rent Item"
+        div="Rent Item"
         verify={this.rentItem}
         pinChanged={this.props.pinChanged}
       />

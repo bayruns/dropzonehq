@@ -1,6 +1,5 @@
 import React from 'react';
 import VerifyForm from '../VerifyForm.jsx';
-import { Button, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
 
 /*
   A PackButton is a button for rigsheets.
@@ -41,17 +40,17 @@ export default class PackButton extends React.Component {
     var buttonID = "PackButton" + this.props.index + this.props.sheetType;
     return (
       <div>
-        <Button size="md" color="primary"
-          onClick={this.toggleVerifyModal} id={buttonID}>Pack</Button>
+        <button size="md" color="primary"
+          onClick={this.toggleVerifyModal} id={buttonID}>Pack</button>
 
-        <Popover placement="bottom" isOpen={this.state.verifyOpen} target={buttonID} toggle={this.toggleVerifyModal}>
-          <PopoverTitle>Verify Packing</PopoverTitle>
-          <PopoverContent>
+        <div placement="bottom" isOpen={this.state.verifyOpen} target={buttonID} toggle={this.toggleVerifyModal}>
+          <div>Verify Packing</div>
+          <div>
             <VerifyForm pinChanged={this.props.pinChanged}/>
-            <Button color="primary" onClick={this.packButton}>Verify</Button>{' '}
-            <Button color="secondary" onClick={this.toggleVerifyModal}>Cancel</Button>
-          </PopoverContent>
-        </Popover>
+            <button color="primary" onClick={this.packButton}>Verify</button>{' '}
+            <button color="secondary" onClick={this.toggleVerifyModal}>Cancel</button>
+          </div>
+        </div>
       </div>
     );
   }

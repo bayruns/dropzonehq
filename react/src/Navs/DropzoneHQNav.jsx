@@ -1,6 +1,5 @@
 import React from 'react';
 import SiteNavbar from './SiteNavbar.jsx';
-import { NavItem } from 'reactstrap';
 import { Link } from 'react-router-dom'
 
 /*
@@ -14,27 +13,27 @@ export default class DropzoneHQNav extends React.Component {
         return (
             <SiteNavbar brandImage={"http://svgshare.com/i/3vT.svg"}
                 brandText="Dropzone HQ" brandLink="#">
-                <NavItem className="dzhq_nav_item">
+                <div className="dzhq_nav_item">
                         <Link to='/dropzone-home'>Home</Link>
-                </NavItem>
-                        <NavItem className="dzhq_nav_item">
+                </div>
+                        <div className="dzhq_nav_item">
                 <Link to='/employee-info'>Stats</Link>
-                </NavItem>
-                <NavItem className="dzhq_nav_item">
+                </div>
+                <div className="dzhq_nav_item">
                         <Link to='/employee-management'>Employee Admin</Link>
-                </NavItem>
-                <NavItem className="dzhq_nav_item">
+                </div>
+                <div className="dzhq_nav_item">
                         <Link to='/rental-menu'>Rentals</Link>
-                </NavItem>
-                <NavItem className="dzhq_nav_item">
+                </div>
+                <div className="dzhq_nav_item">
                         <Link to='/rig-sheets'>Rigsheets</Link>
-                </NavItem>
-                <NavItem className="dzhq_nav_item">
+                </div>
+                <div className="dzhq_nav_item">
                         <Link to='/inventory-menu'>Inventory</Link>
-                </NavItem>
-                <NavItem className="dzhq_nav_item">
+                </div>
+                <div className="dzhq_nav_item">
                         <Link to='/loft-menu'>Loft</Link>
-                </NavItem>
+                </div>
             </SiteNavbar >
         );
     }

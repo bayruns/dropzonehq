@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'reactstrap';
 
 export default class AddInventoryItemBtn extends React.Component 
 {
@@ -32,11 +31,11 @@ export default class AddInventoryItemBtn extends React.Component
     render() {
         return (
             <div>
-                <Button onClick={this.props.onClick}
+                <button onClick={this.props.onClick}
                     size="lg"
                     color="primary"
                     disabled={this.props.disabled}>{this.props.buttonText}
-                </Button>
+                </button>
             </div>
         );
     }

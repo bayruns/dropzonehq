@@ -1,6 +1,5 @@
 import React from 'react';
 import ItemDisplay from './ItemDisplay.jsx';
-import { Form, FormGroup, Input, Row, Col, InputGroup, InputGroupAddon, Card, CardHeader, CardBlock, CardFooter } from 'reactstrap';
 import { rootURL } from '../restInfo.js';
 import UncontrolledTextInput from '../UnControlledTextInput.jsx';
 import SaveItemDetailsBtn from '../Buttons/SaveItemDetailsBtn.jsx';
@@ -57,35 +56,35 @@ export default class InventoryDisplayAAD extends React.Component {
 
     render() {
         return (
-            <Card>
-                <CardHeader>{"AAD " + this.props.itemInfo.item_id + " Details"}</CardHeader>
-                <CardBlock>
-                    <Row>
-                        <InputGroup>
-                            <InputGroupAddon >AAD Lifespan: </InputGroupAddon>
+            <div>
+                <div>{"AAD " + this.props.itemInfo.item_id + " Details"}</div>
+                <div>
+                    <div>
+                        <div>
+                            <divAddon >AAD Lifespan: </divAddon>
                             {/* <UncontrolledTextInput
                                 onBlur={this.lifespanChanged}
                                 id="lifespanID"
                                 defaultText={this.props.AADInfo.lifespan}
                             /> */}
                             <input type="text" value={this.state.AADInfo.lifespan} onChange={this.lifespanChanged}  />
-                        </InputGroup>
-                        <InputGroup>
-                            <InputGroupAddon >AAD Serial#: </InputGroupAddon>
+                        </div>
+                        <div>
+                            <divAddon >AAD Serial#: </divAddon>
                             {/* <UncontrolledTextInput
                                 onBlur={this.aad_snChanged}
                                 id="aad_snID"
                                 defaultText={this.props.AADInfo.aad_sn}
                             /> */}
                             <input type="text" value={this.state.AADInfo.aad_sn} onChange={this.aad_snChanged}  />
-                        </InputGroup>
-                    </Row>
+                        </div>
+                    </div>
                     <InventoryDisplayItem
                         updateItemInfo={this.updateAADRow}
                         defaultItemInfo={this.props.itemInfo}
                     />
-                </CardBlock>
-            </Card>
+                </div>
+            </div>
         );
     }
 }

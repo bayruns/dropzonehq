@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container, Row, Col, Card, CardHeader, CardBlock, ListGroup, ListGroupItem } from 'reactstrap';
 import RigProblemButton from './ModalButtons/RigProblemButton.jsx';
 import { CLAIM_STATUS_CHOICES, CLAIM_SEVERITY_CHOICES } from './restInfo.js';
 import RequestHandler from './RequestHandler.js';
@@ -106,11 +105,11 @@ export default class RigAlertsContainer extends React.Component {
 
     alertFromJSON(responseJSON, key){
         var itemColor = this.getSeverityColor(responseJSON.severity);
-        var nextAlert = <ListGroupItem
+        var nextAlert = <div
             key={key}
             color={itemColor}>
             Rig {responseJSON.rig_id}: {responseJSON.description}
-        </ListGroupItem>
+        </div>
         return nextAlert;
     }
 
@@ -144,27 +143,27 @@ export default class RigAlertsContainer extends React.Component {
 
     render() {
         return (
-            <Container fluid>
-                <Card>
-                    <CardHeader>Reports</CardHeader>
-                    <CardBlock>
-                        <Row>
-                            <Col lg={{ size: 6 }}>
-                                <ListGroup >
+            <div fluid>
+                <div>
+                    <div>Reports</div>
+                    <div>
+                        <div>
+                            <div lg={{ size: 6 }}>
+                                <div >
                                     {this.state.alerts}
-                                </ListGroup>
-                            </Col>
-                            <Col lg={{ size: 6 }}>
+                                </div>
+                            </div>
+                            <div lg={{ size: 6 }}>
 
                                 <RigProblemButton
                                     pinChanged={this.pinChanged}
                                     verify={this.reportRigIssue} />
                                 <br />
-                            </Col>
-                        </Row>
-                    </CardBlock>
-                </Card>
-            </Container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         );
     }
 }

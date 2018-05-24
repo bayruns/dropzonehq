@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
  
 
 /*A ModalDialog is a Reactstrap Modal that has a title, body content, 
@@ -11,16 +10,16 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
  export default class ModalDialog extends React.Component {
      render() {
        return (
-          <Modal toggle={this.props.onCancelClick} isOpen={this.props.isOpen}>
-          <ModalHeader>{this.props.title}</ModalHeader>
-          <ModalBody>
+          <div toggle={this.props.onCancelClick} isOpen={this.props.isOpen}>
+          <div>{this.props.title}</div>
+          <div>
             {this.props.children}
-          </ModalBody>
-          <ModalFooter>
-            <Button id={this.props.primaryButtonID} color="primary" onClick={this.props.onPrimaryClick}>{this.props.primaryButtonText}</Button>{' '}
-            <Button color="secondary" onClick={this.props.onCancelClick}>Cancel</Button>
-          </ModalFooter>
-        </Modal>
+          </div>
+          <div>
+            <button id={this.props.primaryButtonID} color="primary" onClick={this.props.onPrimaryClick}>{this.props.primaryButtonText}</button>{' '}
+            <button color="secondary" onClick={this.props.onCancelClick}>Cancel</button>
+          </div>
+        </div>
        );
      }
  }

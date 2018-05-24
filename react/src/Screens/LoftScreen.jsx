@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col, Card, CardHeader, CardBlock } from 'reactstrap';
 import TabGroup from '../TabGroups/TabGroup.jsx';
 import QueueDisplay from '../QueueDisplay.jsx';
 import QueueList from '../Lists/QueueList.jsx';
@@ -7,17 +6,10 @@ import QueueListItem from '../Lists/QueueListItem.jsx';
 import WarningDisplay from '../WarningDisplay.jsx';
 import WarningList from '../Lists/WarningList.jsx';
 import WarningListItem from '../Lists/WarningListItem.jsx';
-import './LoftScreen.css';
-import BigCalendar from 'react-big-calendar';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { CLAIM_STATUS_CHOICES } from '../restInfo.js';
 import DropzoneHQNav from '../Navs/DropzoneHQNav.jsx';
 import RequestHandler from '../RequestHandler.js';
 import Binder from '../Binder.js';
-import moment from 'moment';
-// Setup the localizer by providing the moment (or globalize) Object
-// to the correct localizer.
-BigCalendar.momentLocalizer(moment);
 
 /**
  * LoftScreen displays all active warnings for damaged rigs and
@@ -62,11 +54,6 @@ export default class LoftScreen extends React.Component {
             queueDisplay: <QueueDisplay />,
             warningDisplay: <WarningDisplay />,
             scheduleDisplay: <div>
-                <BigCalendar
-                    events={myEventsList}
-                    startAccessor='startDate'
-                    endAccessor='endDate'
-                />
             </div>
         }
     }
@@ -511,31 +498,31 @@ export default class LoftScreen extends React.Component {
         this.state.warningDisplay];
         return (
             <div>
-                <Row>
-                    <Col lg={{ size: 12 }}>
+                <div>
+                    <div lg={{ size: 12 }}>
                         <DropzoneHQNav />
-                    </Col>
-                </Row>
-                <Row className="viewport">
-                    <Col xs={{ size: 6 }} md={{ size: 3 }}>
+                    </div>
+                </div>
+                <div className="viewport">
+                    <div xs={{ size: 6 }} md={{ size: 3 }}>
                         <WarningList pinChanged={this.pinChanged} addWarning={this.addWarning}>
                             {Array.from(this.state.warningListItems.values())}
                         </WarningList>
-                    </Col>
-                    <Col xs={{ size: 6 }} md={{ size: 3 }}>
+                    </div>
+                    <div xs={{ size: 6 }} md={{ size: 3 }}>
                         <QueueList addQueueItem={this.addQueueItem}>
                             {Array.from(this.state.queueListItems.values())}
                         </QueueList>
-                    </Col>
-                    <Col xs={{ size: 12 }} md={{ size: 6 }}>
-                        <Card>
-                            <CardHeader>Main View</CardHeader>
-                            <CardBlock className="main_view">
+                    </div>
+                    <div xs={{ size: 12 }} md={{ size: 6 }}>
+                        <div>
+                            <div>Main View</div>
+                            <div className="main_view">
                                 <TabGroup activeTab={this.state.activeTab} tabHeaders={tabHeaders} tabContents={tabContents} />
-                            </CardBlock>
-                        </Card>
-                    </Col>
-                </Row>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { ListGroupItem, ButtonGroup } from 'reactstrap';
 import ModalButton from '../ModalButtons/ModalButton.jsx';
 
 export default class WarningListItem extends React.Component {
@@ -45,7 +44,7 @@ export default class WarningListItem extends React.Component {
 
             </div>
         return (
-            <ListGroupItem style={style} onClick={this.handleClick}>
+            <div style={style} onClick={this.handleClick}>
                 <ul>
                     <li>Severity: {this.props.severity}</li>
                     <li>Rig: {this.props.rig_id}</li>
@@ -53,23 +52,23 @@ export default class WarningListItem extends React.Component {
                     <li>Submit Date: {this.props.submit_date}</li>
                     <li>Due Date: {this.props.due_date}</li>
                 </ul>
-                <ButtonGroup>
-                    <ModalButton buttonSize="sm"
+                <buttonGroup>
+                    <button buttonSize="sm"
                         buttonColor={"info"}
                         buttonText={"Add to Queue"}
                         modalTitle={"Add Warning"}
                         modalContent={addToQueueContent}
                         modalPrimaryButtonText="Add"
                         modalPrimaryClick={this.addToQueue} />
-                    <ModalButton buttonSize="sm"
+                    <button buttonSize="sm"
                         buttonColor={"danger"}
                         buttonText={"Dismiss"}
                         modalTitle={"Dismiss Warning"}
                         modalContent={dismissContent}
                         modalPrimaryButtonText="Dismiss"
                         modalPrimaryClick={this.dismiss} />
-                </ButtonGroup>
-            </ListGroupItem>
+                </buttonGroup>
+            </div>
         );
     }
 }

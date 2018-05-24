@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'reactstrap';
 import ModalDialog from './ModalDialog.jsx';
 import VerifyPopover from './VerifyPopover.jsx';
 import VerifyForm from './VerifyForm.jsx';
@@ -53,10 +52,10 @@ export default class ModalWithVerify extends React.Component {
 
         return (
             <div>
-                <Button size="lg" color={this.props.mainButtonColor}
-                    onClick={this.toggleModal}>{this.props.mainButtonText}</Button>
+                <button size="lg" color={this.props.mainButtonColor}
+                    onClick={this.toggleModal}>{this.props.mainButtonText}</button>
 
-                <ModalDialog title={this.props.modalTitle}
+                <div title={this.props.modalTitle}
                     isOpen={this.state.modalOpen}
                     onCancelClick={this.toggleModal}
                     primaryButtonText={this.props.modalButtonText}
@@ -65,7 +64,7 @@ export default class ModalWithVerify extends React.Component {
                     <div>{this.props.modalContent}
                         <VerifyForm pinChanged={this.props.pinChanged} />
                     </div>
-                </ModalDialog>
+                </div>
             </div>
         );
     }
@@ -74,7 +73,7 @@ export default class ModalWithVerify extends React.Component {
 /*
 <VerifyPopover
                     isOpen={this.state.popoverOpen}
-                    title={this.props.popoverTitle}
+                    title={this.props.div}
                     buttonID={this.props.ID}
                     toggle={this.togglePopover}
                     verify={this.verify}

@@ -1,6 +1,5 @@
 import React from 'react';
 import VerifyForm from '../VerifyForm.jsx';
-import { Button, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
 
 export default class ReturnButton extends React.Component {
     constructor(props) {
@@ -31,19 +30,19 @@ export default class ReturnButton extends React.Component {
 
         return (
             <div>
-                <Button onClick={this.toggleVerifyModal}
+                <button onClick={this.toggleVerifyModal}
                     size="lg"
                     color="primary"
-                    id={buttonID} > {"Return"} </Button>
+                    id={buttonID} > {"Return"} </button>
 
-                <Popover placement="bottom" isOpen={this.state.verifyOpen} target={buttonID} toggle={this.toggleVerifyModal}>
-                    <PopoverTitle>{"Verify Return"}</PopoverTitle>
-                    <PopoverContent>
+                <div placement="bottom" isOpen={this.state.verifyOpen} target={buttonID} toggle={this.toggleVerifyModal}>
+                    <div>{"Verify Return"}</div>
+                    <div>
                         <VerifyForm pinChanged={this.props.pinChanged} />
-                        <Button color="primary" onClick={this.callReturnItem}>Verify</Button>{' '}
-                        <Button color="secondary" onClick={this.toggleVerifyModal}>Cancel</Button>
-                    </PopoverContent>
-                </Popover>
+                        <button color="primary" onClick={this.callReturnItem}>Verify</button>{' '}
+                        <button color="secondary" onClick={this.toggleVerifyModal}>Cancel</button>
+                    </div>
+                </div>
             </div>
         );
     }

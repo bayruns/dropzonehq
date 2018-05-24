@@ -1,8 +1,5 @@
 import React from 'react';
 import MainScreen from './MainScreen.jsx';
-import 'bootstrap/dist/css/bootstrap.css';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
 import { Switch, Route } from 'react-router-dom'
 import EmployeeAdminScreen from '../Screens/EmployeeAdminScreen.jsx';
 import RentalScreen from '../Screens/RentalScreen.jsx';
@@ -29,15 +26,6 @@ export default class MainView extends React.Component {
     render() {
         return (
             <div>
-                <ToastContainer
-                    position="top-center"
-                    type="error"
-                    autoClose={7000}
-                    hideProgressBar={false}
-                    newestOnTop
-                    closeOnClick
-                    pauseOnHover
-                />
                 <main>
                     <Switch>
                         <Route exact path='/' component={MainScreen} />

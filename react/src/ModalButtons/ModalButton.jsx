@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'reactstrap';
 import ModalDialog from '../ModalDialog.jsx';
-import { reactstrapColors, reactstrapButtonSizes } from '../reactstrapStyles.js';
 
 /*
   A ModalButton is a button that, when clicked, displays a modal
@@ -44,22 +42,20 @@ export default class ModalButton extends React.Component {
     render() {
        return (
           <div>
-              <Button size={this.props.buttonSize} color={this.props.buttonColor} onClick={this.toggleModal}>{this.props.buttonText}</Button>
-            <ModalDialog  title={this.props.modalTitle} 
+              <button size={this.props.buttonSize} color={this.props.buttonColor} onClick={this.toggleModal}>{this.props.buttonText}</button>
+            <div  title={this.props.modalTitle} 
                           isOpen={this.state.open} 
                           onCancelClick={this.toggleModal.bind(this)}
                           primaryButtonText={this.props.modalPrimaryButtonText} 
                           onPrimaryClick={this.verify}>
                   {this.props.modalContent} 
-            </ModalDialog>
+            </div>
           </div>
         );
      }
  }
 
  ModalButton.propTypes = {
-   buttonSize: PropTypes.oneOf(reactstrapButtonSizes).isRequired, //the size of the outer button
-   buttonColor: PropTypes.oneOf(reactstrapColors).isRequired, //the color of the outer button
    buttonText: PropTypes.string.isRequired, //the text of the outer button
    modalTitle: PropTypes.string.isRequired, //the title of the modal that the outer button launches
    modalContent: PropTypes.oneOfType([ //the content inside the body of the modal

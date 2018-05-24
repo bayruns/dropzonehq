@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardHeader, CardBody, CardFooter } from 'reactstrap';
+
 import ReactTable from 'react-table';
 import "react-table/react-table.css";
 
@@ -19,9 +19,9 @@ export default class TableSheet extends React.Component {
 
     render() {
         return (
-            <Card>
-                <CardHeader>{this.props.headerText}</CardHeader>
-                <CardBody>
+            <div>
+                <div>{this.props.headerText}</div>
+                <divBody>
                     <ReactTable
                         getTrProps={this.props.getTrProps}//For selecting rows
                         data={this.props.children}
@@ -34,11 +34,11 @@ export default class TableSheet extends React.Component {
                         }}
                         //stripe every other row for readability
                         className="-striped -highlight" />
-                </CardBody>
-                <CardFooter>
+                </divBody>
+                <div>
                 {this.props.footer}
-                </CardFooter>
-            </Card>
+                </div>
+            </div>
         );
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import StatDisplay from './StatDisplay.jsx';
-import { Row, Col } from 'reactstrap';
+
 
 export default class TandemInstructorStatDisplay extends React.Component {
     constructor(props) {
@@ -10,21 +10,21 @@ export default class TandemInstructorStatDisplay extends React.Component {
     render() {
         return (
             <div>
-                <Row>
-                    <Col>
+                <div>
+                    <div>
                         <StatDisplay headerText="Tandem Instructor Stats"
                             statsToDisplay={
-                                <Row>
-                                    <Col>
+                                <div>
+                                    <div>
                                         <p>Tandem Jumps Today: {this.props.tandemJumpsToday}</p>
                                         <p>Tandem Jumps This Week: {this.props.tandemJumpsWeek}</p>
                                         <p>Tandem Jumps This Month: {this.props.tandemJumpsMonth}</p>
                                         <p>Tandem Jumps This Year: {this.props.tandemJumpsYear}</p>
-                                    </Col>
-                                </Row>
+                                    </div>
+                                </div>
                             } />
-                    </Col>
-                </Row>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress } from 'reactstrap';
+
 import ProgressBars from './ProgressBars.jsx';
 
 export default class ExampleProgressBars extends React.Component {

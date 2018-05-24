@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form } from 'reactstrap';
 import ModalWithVerify from '../ModalWithVerify.jsx';
 import RigDropdown from '../Dropdowns/RigDropdown.jsx';
 import ProblemTypesDropdown from '../Dropdowns/ProblemTypesDropdown.jsx';
@@ -51,20 +50,20 @@ export default class PackedWrongRigButton extends React.Component {
   //we can get their values back here when they are changed
   render() {
     const modalContent = 
-    (<Form>
+    (<form>
       <RigDropdown onChange={this.rigChanged} />
       <ProblemTypesDropdown onChange={this.problemChanged} />
-    </Form>);
+    </form>);
 
     return (
-      <ModalWithVerify
+      <divWithVerify
         mainButtonColor="danger"
         mainButtonText="I Packed the Wrong Rig"
         modalButtonText="Report"
         modalTitle="Rig Packing Correction"
         ID="PackedWrongRig"
         modalContent={modalContent}
-        popoverTitle="Confirm Report"
+        div="Confirm Report"
         verify={this.props.verify}
         pinChanged={this.props.pinChanged}
       />

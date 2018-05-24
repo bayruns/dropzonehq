@@ -2,7 +2,6 @@ import React from 'react';
 import ModalButton from './ModalButton.jsx';
 import Checkbox from '../CheckBox/Checkbox.js';
 import Binder from '../Binder.js';
-import { Form, FormGroup, Alert, Input, Row, Col, InputGroup, InputGroupAddon } from 'reactstrap';
 
 export default class AddEmployeeButton extends React.Component {
 
@@ -106,46 +105,46 @@ export default class AddEmployeeButton extends React.Component {
         col3.push(nextItem);
       }
     }
-    return (<Row>
-      <Col>{col1}</Col>
-      <Col>{col2}</Col>
-      <Col>{col3}</Col>
-    </Row>
+    return (<div>
+      <div>{col1}</div>
+      <div>{col2}</div>
+      <div>{col3}</div>
+    </div>
     );
   }
 
   render() {
     var error = <div></div>
     if (this.state.error) {
-      error = <Alert color="danger">{this.state.error}</Alert>;
+      error = <div color="danger">{this.state.error}</div>;
     }
     const checkboxes = this.getCheckBoxes();
-    const modalContent = <Form>
+    const modalContent = <form>
       {error}
-      <InputGroup>
-        <InputGroupAddon >First Name: </InputGroupAddon>
-        <Input id="addEmployeeFirstName" type='text' value={this.state.firstName} onChange={this.firstNameChanged} />
-      </InputGroup>
+      <div>
+        <divAddon >First Name: </divAddon>
+        <div id="addEmployeeFirstName" type='text' value={this.state.firstName} onChange={this.firstNameChanged} />
+      </div>
       <br />
-      <InputGroup>
-        <InputGroupAddon >Last Name: </InputGroupAddon>
-        <Input id="addEmployeeLastName" type='text' value={this.state.lastName} onChange={this.lastNameChanged} />
-      </InputGroup>
+      <div>
+        <divAddon >Last Name: </divAddon>
+        <div id="addEmployeeLastName" type='text' value={this.state.lastName} onChange={this.lastNameChanged} />
+      </div>
       <br />
-      <InputGroup>
-        <InputGroupAddon >Email: </InputGroupAddon>
-        <Input id="addEmployeeEmail" type='email' value={this.state.email} onChange={this.emailChanged} />
-      </InputGroup>
+      <div>
+        <divAddon >Email: </divAddon>
+        <div id="addEmployeeEmail" type='email' value={this.state.email} onChange={this.emailChanged} />
+      </div>
       <br />
-      <Col>
+      <div>
         <h3>Job(s)</h3>
-        <FormGroup check>
+        <div check>
           {checkboxes}
-        </FormGroup>
-      </Col>
-    </Form>;
+        </div>
+      </div>
+    </form>;
     return (
-      <ModalButton buttonSize="md" buttonColor={"primary"} buttonText={"New Employee"} modalTitle={"New Employee"}
+      <button buttonSize="md" buttonColor={"primary"} buttonText={"New Employee"} modalTitle={"New Employee"}
         modalContent={modalContent}
         modalPrimaryButtonText="Add"
         modalPrimaryClick={this.update} />

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form } from 'reactstrap';
 import RigDropdown from '../Dropdowns/RigDropdown.jsx';
 import ProblemTypesDropdown from '../Dropdowns/ProblemTypesDropdown.jsx';
 import TextArea from '../TextInputs/TextArea.jsx';
@@ -59,19 +58,19 @@ export default class RigProblemButton extends React.Component {
   //pass the corresponding onchange methods down to the child components so 
   //we can get their values back here when they are changed
   render() {
-    const modalContent = <Form>
+    const modalContent = <form>
       <RigDropdown onChange={this.rigChanged} />
       <ProblemTypesDropdown onChange={this.problemChanged} />
-      <TextArea onChange={this.textChanged} id="problemNotesTextArea" labelText="Describe the problem:" /></Form>;
+      <TextArea onChange={this.textChanged} id="problemNotesTextArea" labelText="Describe the problem:" /></form>;
     return (
-      <ModalWithVerify
+      <divWithVerify
         mainButtonColor="danger"
         mainButtonText="Report Rig Issue or Damage"
         modalButtonText="Report"
         modalTitle="Rig Issue Report"
         ID="RigIssueReport"
         modalContent={modalContent}
-        popoverTitle="Confirm Report"
+        div="Confirm Report"
         verify={this.verify}
         pinChanged={this.pinChanged}
       />

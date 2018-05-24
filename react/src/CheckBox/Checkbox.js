@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import {Label, Input } from 'reactstrap';
 
 export default class Checkbox extends React.Component {
 
@@ -22,14 +21,14 @@ export default class Checkbox extends React.Component {
 
   render() {
     return (
-        <Label check>
-          <Input type="checkbox"
+        <label check>
+          <div type="checkbox"
                  value={this.props.label}
                  checked={this.state.isChecked}
                  onChange={this.toggleCheckboxChange}
                  index={this.props.index}/>
             {this.props.label}
-        </Label>
+        </label>
     );
   }
 }

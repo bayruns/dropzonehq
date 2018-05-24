@@ -4,7 +4,7 @@ import EditEmployeeButton from '../ModalButtons/EditEmployeeButton.jsx';
 import EmployeeStatusButton from '../ModalButtons/EmployeeStatusButton.jsx';
 import AddEmployeeButton from '../ModalButtons/AddEmployeeButton.jsx';
 import StatButton from '../ModalButtons/StatButton.jsx';
-import { ButtonGroup } from 'reactstrap';
+
 import RequestHandler from '../RequestHandler.js';
 import Binder from '../Binder.js';
 
@@ -59,7 +59,7 @@ export default class EmployeeTable extends React.Component {
       newRows[i].employee_id = rowData[i].employee_id;
       newRows[i].firstname = rowData[i].first_name;
       newRows[i].lastname = rowData[i].last_name;
-      newRows[i].actions = <ButtonGroup>
+      newRows[i].actions = <buttonGroup>
         <EditEmployeeButton
           id={rowData[i].employee_id}
           authorize={this.editEmployee}
@@ -82,7 +82,7 @@ export default class EmployeeTable extends React.Component {
           lastName = {rowData[i].last_name}
          />
 
-      </ButtonGroup>;
+      </buttonGroup>;
       newRows[i].is_active = rowData[i].is_active + "";
       newRows[i].email = rowData[i].email;
       var jobs = "";
@@ -140,7 +140,7 @@ export default class EmployeeTable extends React.Component {
     var errorMsg = "Problem adding employee.";
     var callback = function (response) {
       var jobsString = "";
-      var actionButtons = <ButtonGroup>
+      var actionButtons = <buttonGroup>
         <EditEmployeeButton
           id={response.employee_id}
           authorize={self.editEmployee}
@@ -154,7 +154,7 @@ export default class EmployeeTable extends React.Component {
           firstName={firstName}
           lastName={lastName}
           status={status} />
-      </ButtonGroup>;
+      </buttonGroup>;
       var newRowID = self.state.rowID;
 
       for (var i = 0; i < jobs.length; i++) {
@@ -261,7 +261,7 @@ export default class EmployeeTable extends React.Component {
         if (newRows[i].employee_id === id) {
           console.log("what is UP with you right now dude?")
           newRows[i].is_active = response.is_active + "";
-          newRows[i].actions = <ButtonGroup>
+          newRows[i].actions = <buttonGroup>
             <EditEmployeeButton
               id={response.employee_id}
               authorize={self.editEmployee}
@@ -274,7 +274,7 @@ export default class EmployeeTable extends React.Component {
               firstName={response.first_name}
               lastName={response.last_name}
               status={response.is_active} />
-          </ButtonGroup>;
+          </buttonGroup>;
         }
       }
       self.setState({

@@ -1,6 +1,3 @@
-import {
-    toast
-} from 'react-toastify';
 
 export default class RequestHandler {
 
@@ -37,9 +34,7 @@ export default class RequestHandler {
             return response.json();
         }).then(function (responseData) {
             callback(responseData);
-            toast.success(successMsg);
         }).catch(function (error) {
-            toast.error(error.message);
         });
     }
 

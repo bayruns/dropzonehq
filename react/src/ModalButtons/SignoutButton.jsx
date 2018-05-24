@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import ModalWithVerify from '../ModalWithVerify.jsx';
 import RigDropdown from '../Dropdowns/RigDropdown.jsx';
 import PlaneLoadDropdown from '../Dropdowns/PlaneLoadDropdown.jsx';
@@ -53,22 +52,22 @@ export default class SignoutButton extends React.Component {
 
   render() {
     const modalContent =
-      <Form>
+      <form>
         <RigDropdown sheetType={this.props.sheetType} onChange={this.rigChanged} />
-        <InputGroup>
-          <InputGroupAddon >Plane Load </InputGroupAddon>
-          <Input id="addPlaneLoad" type="number" pattern="[0-9]*" onChange={this.planeLoadChanged} />
-        </InputGroup>
-      </Form>;
+        <div>
+          <divAddon >Plane Load </divAddon>
+          <div id="addPlaneLoad" type="number" pattern="[0-9]*" onChange={this.planeLoadChanged} />
+        </div>
+      </form>;
     return (
-      <ModalWithVerify
+      <divWithVerify
         mainButtonColor="primary"
         mainButtonText="Signout Rig"
         modalButtonText="Signout"
         modalTitle="Signout Rig"
         ID="SignoutButton"
         modalContent={modalContent}
-        popoverTitle="Confirm Signout"
+        div="Confirm Signout"
         verify={this.addSignout}
         pinChanged={this.props.pinChanged}
       />

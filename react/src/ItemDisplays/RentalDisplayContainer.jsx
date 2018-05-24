@@ -1,6 +1,5 @@
 import React from 'react';
 import ItemDisplay from './ItemDisplay.jsx';
-import { Row, Col } from 'reactstrap';
 
 export default class RentalDisplayContainer extends React.Component {
 
@@ -12,38 +11,38 @@ export default class RentalDisplayContainer extends React.Component {
 
         return (
             <div>
-                <Row>
-                    <Col>
+                <div>
+                    <div>
                         <ItemDisplay headerText="Rental Item Details"
                             statsToDisplay={
                                 <div>
-                                    <Row>
-                                        <Col>
+                                    <div>
+                                        <div>
                                             <p>Rental Status: {this.props.is_available ? "Available" : "Rented by " + this.props.renter_name}</p>
-                                        </Col>
+                                        </div>
 
-                                    </Row>
-                                    <Row>
-                                        <Col>
+                                    </div>
+                                    <div>
+                                        <div>
                                             <p>Container: {this.props.brand}</p>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
                                             <p>Description: {this.props.description}</p>
-                                        </Col>
+                                        </div>
 
-                                    </Row>
-                                    <Row>
-                                        <Col>
+                                    </div>
+                                    <div>
+                                        <div>
                                             {this.props.button}
-                                        </Col>
+                                        </div>
 
-                                    </Row>
+                                    </div>
                                 </div>
                             } />
-                    </Col>
-                </Row>
+                    </div>
+                </div>
             </div>
         );
     }

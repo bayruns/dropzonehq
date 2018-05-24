@@ -9,7 +9,6 @@ import InventoryDisplayContainer from '../ItemDisplays/InventoryDisplayContainer
 import InventoryDisplayAAD from '../ItemDisplays/InventoryDisplayAAD.jsx';
 
 import AddInventoryItemBtn from '../Buttons/AddInventoryItemBtn.jsx';
-import { Row, Col, Card } from 'reactstrap';
 import DropzoneHQNav from '../Navs/DropzoneHQNav.jsx';
 import "react-table/react-table.css";
 
@@ -208,77 +207,6 @@ export default class InventoryScreen extends React.Component {
         this.containerPatchPost(itemInfo, containerInfo, true);
     }
 
-
-/*     updateAADRow(itemInfo, AADInfo) {
-        require('isomorphic-fetch');
-        require('es6-promise').polyfill();
-
-        console.log("item_id: " + itemInfo.item_id);
-
-        console.log("-----aad lifespan: " + AADInfo.lifespan);
-        console.log("-----aad sn: " + AADInfo.aad_sn);
-
-        var url = rootURL + "/AADs/" + itemInfo.item_id;
-
-        var self = this;
-        var requestVariables = itemInfo;
-        requestVariables.lifespan = AADInfo.lifespan;
-        requestVariables.serial_number = AADInfo.aad_sn;
-
-        fetch(url, {
-            method: "PATCH",
-            mode: 'CORS',
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(requestVariables)
-        }).then(function (response) {
-            if (response.status >= 400) {
-                throw new Error("Editing AAD failed. Bad response " + response.status + " from server");
-            }
-            return response.json();
-        }).then(function (responseData) {
-            var AAD = self.all.get(itemInfo.item_id);
-            AAD.manufacturer = itemInfo.manufacturer;
-            AAD.description = itemInfo.description;
-            AAD.is_on_rig = itemInfo.is_on_rig;
-            AAD.brand = itemInfo.brand;
-            AAD.is_rentable = itemInfo.is_rentable;
-            AAD.lifespan = AADInfo.lifespan;
-            AAD.serial_number = AADInfo.aad_sn;
-
-            self.all.set(itemInfo.item_id, AAD);
-            self.aads.set(itemInfo.item_id, AAD);
-
-            if (self.state.filter === "all") {
-                self.setState({
-                    rows: Array.from(self.all.values())
-                })
-            }
-            else {
-                // must be in AAD display
-                self.setState({
-                    rows: Array.from(self.aads.values())
-                })
-            }
-
-            // FOR DEBUGGING:
-            var size = self.all.size;
-            var allIter = self.all.values();
-            if (size > 0)
-            {
-                for (var i = 0; i < size; i++)
-                {
-                    console.log("all types map: " + i + " element: " + JSON.stringify(allIter.next().value));
-                    // console.log("aads map: " + self.aads);
-                }       
-            }
-
-        }).catch(function (error) {
-            // toast.error(error + "\n" + url);
-        });
-    }  */
     /**
      * Add a new container to the backend and display it on the frontend.
      * @param {Object} itemInfo - the fields&values from Item needed to perform this request
@@ -903,185 +831,6 @@ export default class InventoryScreen extends React.Component {
         });
     }
 
-/*     addAAD(itemInfo, AADInfo) {
-        require('isomorphic-fetch');
-        require('es6-promise').polyfill();
-
-        // var url = rootURL + "/AADs/";
-
-        console.log("in addAAD: itemInfo.item_type_id: " + itemInfo.item_type_id);
-
-        var self = this;
-        var requestVariables = itemInfo;
-        requestVariables.lifespan = AADInfo.lifespan;
-        requestVariables.serial_number = AADInfo.aad_sn;
-
-        fetch(url, {
-            method: "POST",
-            mode: 'CORS',
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(requestVariables)
-        }).then(function (response) {
-            if (response.status >= 400) {
-                throw new Error("Adding AAD failed. Bad response " + response.status + " from server");
-            }
-            return response.json();
-        }).then(function (responseData) {
-            var AAD = {};
-            AAD.manufacturer = itemInfo.manufacturer;
-            AAD.description = itemInfo.description;
-            AAD.is_on_rig = itemInfo.is_on_rig;
-            AAD.brand = itemInfo.brand;
-            AAD.is_rentable = itemInfo.is_rentable;
-            AAD.lifespan = AADInfo.lifespan;
-            AAD.serial_number = AADInfo.aad_sn;
-            AAD.item_type = 'aad';
-            self.all.set(responseData.item_id, AAD);
-            self.aads.set(responseData.item_id, AAD);
-
-            // FOR DEBUGGING:
-            var size = self.all.size;
-            var allIter = self.all.values();
-            if (size > 0)
-            {
-                for (var i = 0; i < size; i++)
-                {
-                    console.log("all types map: " + i + " element: " + allIter.next().value);
-                    // console.log("aads map: " + self.aads);
-                }       
-            }
-
-            if (self.state.filter === "all") {
-                self.setState({
-                    rows: Array.from(self.all.values())
-                })
-            }
-            else {
-                // must be in AAD display
-                self.setState({
-                    rows: Array.from(self.aads.values())
-                })
-            }
-        }).catch(function (error) {
-           // toast.error(error + "\n" + url);
-        });
-    } */
-
-/*     addContainer(itemInfo, containerInfo) {
-        require('isomorphic-fetch');
-        require('es6-promise').polyfill();
-
-        var url = rootURL + "/containers/";
-
-        var self = this;
-        var requestVariables = itemInfo;
-        requestVariables.serial_number = containerInfo.container_sn;
-        requestVariables.pin = this.state.pin;
-
-        fetch(url, {
-            method: "POST",
-            mode: 'CORS',
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(requestVariables)
-        }).then(function (response) {
-            if (response.status >= 400) {
-                throw new Error("Editing container failed. Bad response " + response.status + " from server");
-            }
-            return response.json();
-        }).then(function (responseData) {
-            var container = {};
-            container.manufacturer = itemInfo.manufacturer;
-            container.description = itemInfo.description;
-            container.is_on_rig = itemInfo.is_on_rig;
-            container.brand = itemInfo.brand;
-            container.is_rentable = itemInfo.is_rentable;
-            container.container_sn = containerInfo.container_sn;
-            container.item_type = 'container'
-            self.all.set(responseData.item_id, container);
-            self.containers.set(responseData.item_id, container);
-
-            if (self.state.filter === "all") {
-                self.setState({
-                    rows: Array.from(self.all.values())
-                })
-            }
-            else {
-                // must be in Containers display
-                self.setState({
-                    rows: Array.from(self.containers.values())
-                })
-            }
-
-        }).catch(function (error) {
-            toast.error(error + "\n" + url);
-        });
-    } */
-
-/*     addCanopy(itemInfo, canopyInfo) {
-        require('isomorphic-fetch');
-        require('es6-promise').polyfill();
-
-        var url = rootURL + "/canopies/";
-
-        var self = this;
-        var requestVariables = itemInfo;
-        requestVariables.pin = this.state.pin;
-        requestVariables.rig_id = canopyInfo.rig_num;
-        requestVariables.serial_number = canopyInfo.canopy_sn;
-        requestVariables.size = canopyInfo.size;
-        requestVariables.jump_count = canopyInfo.jump_count;
-
-        fetch(url, {
-            method: "POST",
-            mode: 'CORS',
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(requestVariables)
-        }).then(function (response) {
-            if (response.status >= 400) {
-                throw new Error("Editing canopy failed. Bad response " + response.status + " from server");
-            }
-            return response.json();
-        }).then(function (responseData) {
-            var canopy = {};
-            canopy.manufacturer = itemInfo.manufacturer;
-            canopy.description = itemInfo.description;
-            canopy.is_on_rig = itemInfo.is_on_rig;
-            canopy.brand = itemInfo.brand;
-            canopy.is_rentable = itemInfo.is_rentable;
-            canopy.serial_number = canopyInfo.canopy_sn;
-            canopy.size = canopyInfo.size;
-            canopy.jump_count = canopyInfo.jump_count;
-            canopy.item_type = 'canopy';
-
-            self.all.set(responseData.item_id, canopy);
-            self.canopies.set(responseData.item_id, canopy);
-
-            if (self.state.filter === "all") {
-                self.setState({
-                    rows: Array.from(self.all.values())
-                })
-            }
-            else {
-                // must be in Canopies display
-                self.setState({
-                    rows: Array.from(self.canopies.values())
-                })
-            }
-
-        }).catch(function (error) {
-            toast.error(error + "\n" + url);
-        });
-    } */
-
     addItemfilterChanged(selection)
     {
         console.log("in addItemfilterChanged " );
@@ -1126,13 +875,13 @@ export default class InventoryScreen extends React.Component {
         </div>
         return (
             <div>
-                <Row>
-                    <Col lg={{ size: 12 }}>
+                <div>
+                    <div lg={{ size: 12 }}>
                         <DropzoneHQNav />
-                    </Col>
-                </Row>
-                <Row style={marginStyle}>
-                    <Col lg={{ size: 5, offset: 1 }}>
+                    </div>
+                </div>
+                <div style={marginStyle}>
+                    <div lg={{ size: 5, offset: 1 }}>
                         <ItemTable
                             columns={this.state.columns}
                             rows={this.state.rows}
@@ -1140,13 +889,13 @@ export default class InventoryScreen extends React.Component {
                             bottom={buttons}
                             itemSelected={this.itemSelected}
                         />
-                    </Col>
-                    <Col lg={{ size: 5 }}>
-                        <Card>
+                    </div>
+                    <div lg={{ size: 5 }}>
+                        <div>
                             {this.state.currentItem}
-                        </Card>
-                    </Col>
-                </Row>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

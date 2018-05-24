@@ -1,6 +1,5 @@
 import React from 'react';
 import ItemDisplay from './ItemDisplay.jsx';
-import { Form, FormGroup, Input, Row, Col, InputGroup, InputGroupAddon, Card, CardHeader, CardBlock, CardFooter } from 'reactstrap';
 import { rootURL } from '../restInfo.js';
 import UncontrolledTextInput from '../UnControlledTextInput.jsx';
 import InventoryDisplayItem from './InventoryDisplayItem';
@@ -74,26 +73,26 @@ export default class InventoryDisplayCanopy extends React.Component {
 
     render() {
         return (
-            <Card>
-                <CardHeader>{"Canopy " + this.props.itemInfo.item_id + " Details"}</CardHeader>
-                <CardBlock>
-                    <Row>
-                        <InputGroup>
-                            <InputGroupAddon >Canopy Size: </InputGroupAddon>
+            <div>
+                <div>{"Canopy " + this.props.itemInfo.item_id + " Details"}</div>
+                <div>
+                    <div>
+                        <div>
+                            <divAddon >Canopy Size: </divAddon>
                             {/* <UncontrolledTextInput
                                 onBlur={this.sizeChanged}
                                 id="sizeID"
                                 defaultText={this.props.canopyInfo.size}
                             /> */}
                             <input type="text" value={this.state.canopyInfo.size} onChange={this.sizeChanged}  />
-                        </InputGroup>
-                    </Row>
+                        </div>
+                    </div>
                     <InventoryDisplayItem
                         updateItemInfo={this.updateCanopyRow}
                         defaultItemInfo={this.props.itemInfo}
                     />
-                </CardBlock>
-            </Card>
+                </div>
+            </div>
         );
     }
 };

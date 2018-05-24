@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+
 
 
 /*
@@ -21,15 +21,15 @@ export default class VerifyForm extends React.Component {
     //we can get their values back here when they are changed
     render() {
         return (
-            <Form>
-            <FormGroup>
-            <InputGroup>
-              <InputGroupAddon>PIN:</InputGroupAddon>
-              <Input autoFocus onChange={this.handleChange} type="password" name="password" id="pinEntryField"
+            <form>
+            <div>
+            <div>
+              <divAddon>PIN:</divAddon>
+              <div autoFocus onChange={this.handleChange} type="password" name="password" id="pinEntryField"
                placeholder={this.props.placeholder} />
-            </InputGroup>
-          </FormGroup>
-          </Form>           
+            </div>
+          </div>
+          </form>           
         );
     }
 }

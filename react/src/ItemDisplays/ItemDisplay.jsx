@@ -1,17 +1,16 @@
 import React from 'react';
-import { Row, Col, Card, CardHeader, CardBlock, CardFooter } from 'reactstrap';
 
 export default class ItemDisplay extends React.Component {
 
     render() {
         return (
-            <Card >
-                <CardHeader>{this.props.headerText}</CardHeader>
-                <CardBlock>
+            <div >
+                <div>{this.props.headerText}</div>
+                <div>
                     {this.props.statsToDisplay}
-                </CardBlock>
-                <CardFooter> {this.props.footerText} </CardFooter>
-            </Card>
+                </div>
+                <div> {this.props.footerText} </div>
+            </div>
         );
     }
 }

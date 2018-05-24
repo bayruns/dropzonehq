@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from 'reactstrap';
 
 /*
     A SiteNavbar is a light styled Reactstrap Navbar that collapses on smaller screens.
@@ -23,17 +22,17 @@ export default class SiteNavbar extends React.Component {
   }
   render() {
     return (
-      <Navbar color="faded" light expand="lg">
-        <NavbarBrand href={this.props.brandLink}>
+      <divbar color="faded" light expand="lg">
+        <divbarBrand href={this.props.brandLink}>
           <img src={this.props.brandImage}  alt="logo" />
-          <h1>{this.props.brandText}</h1></NavbarBrand>
-        <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="ml-auto" navbar>
+          <h1>{this.props.brandText}</h1></divbarBrand>
+        <divbarToggler onClick={this.toggle} />
+        <divlapse isOpen={this.state.isOpen} navbar>
+          <div className="ml-auto" navbar>
             {this.props.children}
-          </Nav>
-        </Collapse>
-      </Navbar>
+          </div>
+        </divlapse>
+      </divbar>
     );
   }
 }

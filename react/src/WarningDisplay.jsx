@@ -1,6 +1,6 @@
 import React from 'react';
 import { CLAIM_SEVERITY_CHOICES } from './restInfo.js';
-import { Alert } from 'reactstrap';
+
 
 export default class WarningDisplay extends React.Component {
 
@@ -28,7 +28,7 @@ export default class WarningDisplay extends React.Component {
         return (
             <div>
                 <h3>Pending Claim Issue</h3>
-                <Alert color={alertColor}>
+                <div color={alertColor}>
                     <h4>Rig {this.props.rig_id}: {alertMsg}</h4>
                     <br />
                     <h5>Description:</h5>
@@ -37,7 +37,7 @@ export default class WarningDisplay extends React.Component {
                     <h5>Submit Date: {this.props.submit_date}</h5>
                     <br />
                     <h5>Due Date: {this.props.due_date}</h5>
-                </Alert>
+                </div>
             </div>
         );
     }

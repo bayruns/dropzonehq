@@ -6,7 +6,7 @@ import RentalDisplayCanopy from '../ItemDisplays/RentalDisplayCanopy.jsx';
 import RentalDisplayContainer from '../ItemDisplays/RentalDisplayContainer.jsx';
 import ReturnButton from '../Buttons/ReturnButton.jsx';
 import RentButton from '../ModalButtons/RentButton.jsx';
-import { Row, Col } from 'reactstrap';
+
 import moment from 'moment';
 import "react-table/react-table.css";
 import RequestHandler from '../RequestHandler.js';
@@ -453,8 +453,8 @@ export default class RentalTable extends React.Component {
         />
         return (
             <div>
-                <Row>
-                    <Col>
+                <div>
+                    <div>
                         <ItemTable
                             columns={this.state.columns}
                             rows={this.state.rows}
@@ -462,8 +462,8 @@ export default class RentalTable extends React.Component {
                             bottom={""}
                             itemSelected={this.itemSelected}
                         />
-                    </Col>
-                </Row>
+                    </div>
+                </div>
             </div>
         );
     }

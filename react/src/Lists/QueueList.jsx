@@ -16,7 +16,7 @@ export default class QueueList extends React.Component {
 
 /*
 var footerContent = 
-            <ModalButton buttonSize="lg" buttonColor="info"
+            <button buttonSize="lg" buttonColor="info"
                     buttonText="Add New"
                     modalTitle="Add New Item to Queue"
                     modalPrimaryClick={this.props.addQueueItem}

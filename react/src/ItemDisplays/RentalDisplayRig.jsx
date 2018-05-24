@@ -1,6 +1,5 @@
 import React from 'react';
 import ItemDisplay from './ItemDisplay.jsx';
-import { Row, Col } from 'reactstrap';
 
 export default class RentalDisplayRig extends React.Component {
 
@@ -12,40 +11,40 @@ export default class RentalDisplayRig extends React.Component {
     render() {
         return (
             <div>
-                <Row>
-                    <Col>
+                <div>
+                    <div>
                         <ItemDisplay headerText="Rental Item Details"
                             statsToDisplay={
                                 <div>
-                                    <Row>
-                                        <Col>
+                                    <div>
+                                        <div>
                                             <p>Rental Status: {this.props.is_available ? "Available" : "Rented by " + this.props.renter_name}</p>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
                                             <p>Main Canopy: {this.props.main_canopy_brand} {this.props.main_canopy_size}</p>
                                             <p>Container: {this.props.container_brand}</p>
-                                        </Col>
-                                        <Col>
+                                        </div>
+                                        <div>
                                             <p>Reserve Canopy: {this.props.reserve_canopy_brand} {this.props.reserve_canopy_size}</p>
                                             <p>AAD Lifespan: {this.props.aad_lifespan}</p>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
                                             <p>Description: {this.props.description}</p>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
                                             {this.props.button}
-                                        </Col>
-                                    </Row>
+                                        </div>
+                                    </div>
                                 </div>
                             } />
-                    </Col>
-                </Row>
+                    </div>
+                </div>
             </div>
         );
     }

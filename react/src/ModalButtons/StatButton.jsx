@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form, Card, CardBlock } from 'reactstrap';
 import ModalButton from './ModalButton.jsx';
 import BioStatDisplay from '../StatDisplays/BioStatDisplay.jsx';
 import TandemInstructorStatDisplay from '../StatDisplays/TandemInstructorStatDisplay.jsx';
@@ -160,9 +159,9 @@ export default class StatButton extends React.Component {
     render() {
 
         const modalContent =
-            <Form>
-                <Card>
-                    <CardBlock>
+            <form>
+                <div>
+                    <div>
                         <BioStatDisplay firstName={this.props.firstName}
                             lastName={this.props.lastName}
                         />
@@ -178,12 +177,12 @@ export default class StatButton extends React.Component {
                             tandemPackedWeek={this.state.employeeInfo.tandemPackedWeek}
                             tandemPackedMonth={this.state.employeeInfo.tandemPackedMonth}
                             tandemPackedYear={this.state.employeeInfo.tandemPackedYear} />
-                    </CardBlock>
-                </Card>
-            </Form>;
+                    </div>
+                </div>
+            </form>;
 
         return (
-            <ModalButton
+            <button
                 buttonSize="md"
                 buttonColor="primary"
                 buttonText="Stats"

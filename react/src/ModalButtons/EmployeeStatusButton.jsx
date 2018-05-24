@@ -25,7 +25,7 @@ export default class EmployeeStatusButton extends React.Component {
     }
 
     return (
-      <ModalButton buttonSize="md" buttonColor={btnColor} buttonText={btnText} modalTitle={title}
+      <button buttonSize="md" buttonColor={btnColor} buttonText={btnText} modalTitle={title}
         modalContent={<p>Are you sure you want to {btnText} the employment status of {name}?</p>}
         modalPrimaryButtonText={btnText}
         modalPrimaryClick={this.toggle} />

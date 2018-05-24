@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormGroup, Label, Input } from 'reactstrap';
+
 
 /*
  
@@ -18,10 +18,10 @@ export default class TextArea extends React.Component {
 
   render() {
     return (
-      <FormGroup>
-      <Label for={this.props.id}>{this.props.labelText}</Label>
-      <Input type="textarea" name="textarea" value={this.props.value} id={this.props.id} onChange={this.handleChange} />
-    </FormGroup>
+      <div>
+      <label for={this.props.id}>{this.props.labelText}</label>
+      <div type="textarea" name="textarea" value={this.props.value} id={this.props.id} onChange={this.handleChange} />
+    </div>
     );
   }
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ListGroup, ListGroupItem } from 'reactstrap';
 
 /*
     An AlertList is a list of Reactstrap alerts.
@@ -15,7 +14,7 @@ export default class AlertList extends React.Component {
         var listItems = [];
         for(var i =0; i < this.props.children.length; i++)
         {
-            var nextItem = <ListGroupItem>{this.props.children[i]}</ListGroupItem>;
+            var nextItem = <div>{this.props.children[i]}</div>;
             listItems.push(nextItem);
         }
         return listItems;
@@ -23,9 +22,9 @@ export default class AlertList extends React.Component {
     render() {
         var items = this.processListItems();
         return (
-            <ListGroup>
+            <div>
                 {items}
-            </ListGroup>
+            </div>
         );
     }
 }

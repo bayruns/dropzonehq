@@ -2,7 +2,6 @@ import React from 'react';
 import Dropdown from './Dropdown.jsx';
 import DropdownOption from './DropdownOption.jsx';
 import { rootURL } from '../restInfo.js';
-import { toast } from 'react-toastify';
 
 export default class RigDropdown extends React.Component {
 
@@ -78,7 +77,6 @@ export default class RigDropdown extends React.Component {
         self.props.onChange(self.state.rigData[0]);
       })//catch any errors and display them as a toast
       .catch(function (error) {
-        toast.error(error + "\n" + url);
         console.log(error);
       });
     }

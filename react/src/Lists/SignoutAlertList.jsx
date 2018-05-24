@@ -16,7 +16,7 @@ export default class SignoutAlertList extends React.Component {
         var alerts = []; //
     
         Object.keys(alertData).forEach(function (i) {
-          var nextAlert = <AlertBox
+          var nextAlert = <divBox
             key={i}
             alertColor={alertData[i].severity}
             message={alertData[i].message} />
@@ -28,9 +28,9 @@ export default class SignoutAlertList extends React.Component {
     render() {
         var alerts = this.getAlerts();
         return (
-            <AlertList headerText="Rig Alerts">
+            <divList headerText="Rig Alerts">
                     {alerts}
-            </AlertList>
+            </divList>
         );
     }
 }

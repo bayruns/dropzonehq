@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
+
 import VerifyForm from './VerifyForm.jsx';
 
 export default class VerifyPopover extends React.Component {
 
     render() {
         return (
-            <Popover placement="bottom" 
+            <div placement="bottom" 
                      isOpen={this.props.isOpen} 
                      target={this.props.buttonID} 
                      toggle={this.props.toggle}
             >
-                <PopoverTitle>{this.props.title}</PopoverTitle>
-                <PopoverContent>
+                <div>{this.props.title}</div>
+                <div>
                     <VerifyForm pinChanged={this.props.pinChanged} />
-                    <Button color="primary" onClick={this.props.verify}>Verify</Button>{' '}
-                    <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
-                </PopoverContent>
-            </Popover>
+                    <button color="primary" onClick={this.props.verify}>Verify</button>{' '}
+                    <button color="secondary" onClick={this.props.toggle}>Cancel</button>
+                </div>
+            </div>
         );
     }
 }

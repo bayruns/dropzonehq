@@ -1,6 +1,6 @@
 import React from 'react';
 import StatDisplay from './StatDisplay.jsx';
-import { Row, Col } from 'reactstrap';
+
 
 
 export default class BioStatDisplay extends React.Component {
@@ -24,21 +24,21 @@ export default class BioStatDisplay extends React.Component {
     render() {
         return (
             <div>
-                <Row>
-                    <Col>
+                <div>
+                    <div>
                         <StatDisplay headerText="Bio"
                             statsToDisplay={
-                                <Row>
-                                    <Col>
+                                <div>
+                                    <div>
                                         <p>FirstName: {this.props.firstName}</p>
-                                    </Col>
-                                    <Col>
+                                    </div>
+                                    <div>
                                         <p>Last Name: {this.props.lastName}</p>
-                                    </Col>
-                                </Row>
+                                    </div>
+                                </div>
                             } />
-                    </Col>
-                </Row>
+                    </div>
+                </div>
             </div>
         );
     }

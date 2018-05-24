@@ -1,7 +1,6 @@
 import React from 'react';
 import ModalButton from './ModalButton.jsx';
 import Checkbox from '../CheckBox/Checkbox.js';
-import { Form, FormGroup, Row, Col, InputGroup, InputGroupAddon } from 'reactstrap';
 import UncontrolledTextInput from '../UnControlledTextInput.jsx';
 import Binder from '../Binder.js';
 
@@ -127,53 +126,53 @@ export default class EditEmployeeButton extends React.Component {
                 }
             }
         }
-        return (<Row>
-            <Col>{col1}</Col>
-            <Col>{col2}</Col>
-            <Col>{col3}</Col>
-        </Row>
+        return (<div>
+            <div>{col1}</div>
+            <div>{col2}</div>
+            <div>{col3}</div>
+        </div>
         );
     }
 
     render() {
         const checkboxes = this.getCheckBoxes(this.state.jobs);
-        const modalContent = <Form>
-            <InputGroup>
-                <InputGroupAddon >First Name: </InputGroupAddon>
+        const modalContent = <form>
+            <div>
+                <divAddon >First Name: </divAddon>
                     <UncontrolledTextInput
                         onBlur={this.firstNameChanged}
                         id="editEmployeeFirstName"
                         defaultText={this.props.firstName}
                     />
-            </InputGroup>
+            </div>
             <br />
-            <InputGroup>
-                <InputGroupAddon >Last Name: </InputGroupAddon>
+            <div>
+                <divAddon >Last Name: </divAddon>
                     <UncontrolledTextInput
                         onBlur={this.lastNameChanged}
                         id="editEmployeeLastName"
                         defaultText={this.props.lastName}
                     />            
-            </InputGroup>
+            </div>
             <br />
-            <InputGroup>
-                <InputGroupAddon >Email </InputGroupAddon>
+            <div>
+                <divAddon >Email </divAddon>
                     <UncontrolledTextInput
                         onBlur={this.emailChanged}
                         id="editEmployeeEmail"
                         defaultText={this.props.email}
                     />               
-            </InputGroup>
+            </div>
             <br />
-            <Col>
+            <div>
                 <h3>Job(s)</h3>
-                <FormGroup check>
+                <div check>
                     {checkboxes}
-                </FormGroup>
-            </Col>
-        </Form>;
+                </div>
+            </div>
+        </form>;
         return (
-            <ModalButton buttonSize="md" buttonColor={"primary"} buttonText={"Edit"} modalTitle={"Edit Employee"}
+            <button buttonSize="md" buttonColor={"primary"} buttonText={"Edit"} modalTitle={"Edit Employee"}
                 modalContent={modalContent}
                 modalPrimaryButtonText="Save"
                 modalPrimaryClick={this.update} />

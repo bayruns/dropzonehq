@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
+
 import classnames from 'classnames';
 
 
@@ -43,11 +43,11 @@ export default class TabGroup extends React.Component {
         for (var ndx = 0; ndx < tabNames.length; ndx++) {
 
             var nextTab = (
-                <NavItem key={ndx}>
-                    <NavLink className={classnames({ active: this.state.activeTab === ndx })} onClick={this.toggle.bind(this, ndx)}>
+                <div key={ndx}>
+                    <divLink className={classnames({ active: this.state.activeTab === ndx })} onClick={this.toggle.bind(this, ndx)}>
                         {tabNames[ndx]}
-                    </NavLink>
-                </NavItem>
+                    </divLink>
+                </div>
             );
             tabs.push(nextTab);
         }
@@ -58,9 +58,9 @@ export default class TabGroup extends React.Component {
         var tabs = [];
         for (var ndx = 0; ndx < tabContents.length; ndx++) {
             var nextTab = (
-                <TabPane tabId={ndx} key={ndx}>
+                <div tabId={ndx} key={ndx}>
                     {tabContents[ndx]}
-                </TabPane>
+                </div>
             );
             tabs.push(nextTab);
         }
@@ -70,12 +70,12 @@ export default class TabGroup extends React.Component {
     render() {
         return (
             <div>
-                <Nav tabs>
+                <div tabs>
                     {this.getNavTabs(this.props.tabHeaders)}
-                </Nav>
-                <TabContent activeTab={this.state.activeTab}>
+                </div>
+                <div activeTab={this.state.activeTab}>
                     {this.getTabContent(this.props.tabContents)}
-                </TabContent>
+                </div>
             </div>
         );
     }

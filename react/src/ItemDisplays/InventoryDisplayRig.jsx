@@ -1,6 +1,5 @@
 import React from 'react';
 import ItemDisplay from './ItemDisplay.jsx';
-import { Form, FormGroup, Input, Row, Col, InputGroup, InputGroupAddon, Card, CardHeader, CardBlock, CardFooter } from 'reactstrap';
 import { rootURL } from '../restInfo.js';
 import UncontrolledTextInput from '../UnControlledTextInput.jsx';
 import InventoryDisplayItem from './InventoryDisplayItem.jsx';
@@ -64,18 +63,18 @@ export default class InventoryDisplayRig extends React.Component {
 
     render() {
         return (
-            <Card>
-                <CardHeader>{"Rig " + this.props.itemInfo.item_id + " Details"}</CardHeader>
-                <CardBlock>
-                    <Row>
+            <div>
+                <div>{"Rig " + this.props.itemInfo.item_id + " Details"}</div>
+                <div>
+                    <div>
                         {/*stuff for rigs will have to go here*/}
-                    </Row>
+                    </div>
                     <InventoryDisplayItem
                         updateItemInfo={this.updateRigRow}
                         defaultItemInfo={this.props.itemInfo}
                     />
-                </CardBlock>
-            </Card>
+                </div>
+            </div>
         );
     }
 };
