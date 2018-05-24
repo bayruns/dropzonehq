@@ -68,6 +68,4 @@ class RentalScreen extends React.Component {
     }
 };
 
-//<RentButton buttonText="Rent" disabled={true} />
-
 export default RentalScreen;

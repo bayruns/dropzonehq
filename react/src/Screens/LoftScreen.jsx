@@ -1,5 +1,4 @@
 import React from 'react';
-import TabGroup from '../TabGroups/TabGroup.jsx';
 import QueueDisplay from '../QueueDisplay.jsx';
 import QueueList from '../Lists/QueueList.jsx';
 import QueueListItem from '../Lists/QueueListItem.jsx';
@@ -518,7 +517,6 @@ export default class LoftScreen extends React.Component {
                         <div>
                             <div>Main View</div>
                             <div className="main_view">
-                                <TabGroup activeTab={this.state.activeTab} tabHeaders={tabHeaders} tabContents={tabContents} />
                             </div>
                         </div>
                     </div>

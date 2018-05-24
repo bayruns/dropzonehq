@@ -1,7 +1,6 @@
 import React from 'react';
 import RigDropdown from '../Dropdowns/RigDropdown.jsx';
 import ProblemTypesDropdown from '../Dropdowns/ProblemTypesDropdown.jsx';
-import TextArea from '../TextInputs/TextArea.jsx';
 import ModalWithVerify from '../ModalWithVerify.jsx';
 import Binder from '../Binder.js';
 /*
@@ -61,7 +60,7 @@ export default class RigProblemButton extends React.Component {
     const modalContent = <form>
       <RigDropdown onChange={this.rigChanged} />
       <ProblemTypesDropdown onChange={this.problemChanged} />
-      <TextArea onChange={this.textChanged} id="problemNotesTextArea" labelText="Describe the problem:" /></form>;
+      <input onChange={this.textChanged} id="problemNotesTextArea" labelText="Describe the problem:" /></form>;
     return (
       <divWithVerify
         mainButtonColor="danger"

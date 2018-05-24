@@ -7,8 +7,6 @@ import RentalDisplayContainer from '../ItemDisplays/RentalDisplayContainer.jsx';
 import ReturnButton from '../Buttons/ReturnButton.jsx';
 import RentButton from '../ModalButtons/RentButton.jsx';
 
-import moment from 'moment';
-import "react-table/react-table.css";
 import RequestHandler from '../RequestHandler.js';
 import Binder from '../Binder.js';
 
@@ -421,7 +419,6 @@ export default class RentalTable extends React.Component {
         var self = this;
         var variables = {
             pin: '222222',
-            returned_date: moment()
         };
 
         var callback = function (responseData) {

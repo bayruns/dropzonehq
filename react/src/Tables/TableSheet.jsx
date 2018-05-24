@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ReactTable from 'react-table';
-import "react-table/react-table.css";
 
 /*
     A TableSheet is a React-Table that is displayed on a card background.
@@ -21,8 +19,8 @@ export default class TableSheet extends React.Component {
         return (
             <div>
                 <div>{this.props.headerText}</div>
-                <divBody>
-                    <ReactTable
+                <div>
+                    <div
                         getTrProps={this.props.getTrProps}//For selecting rows
                         data={this.props.children}
                         columns={this.props.columns}
@@ -34,7 +32,7 @@ export default class TableSheet extends React.Component {
                         }}
                         //stripe every other row for readability
                         className="-striped -highlight" />
-                </divBody>
+                </div>
                 <div>
                 {this.props.footer}
                 </div>

@@ -10,7 +10,6 @@ import InventoryDisplayAAD from '../ItemDisplays/InventoryDisplayAAD.jsx';
 
 import AddInventoryItemBtn from '../Buttons/AddInventoryItemBtn.jsx';
 import DropzoneHQNav from '../Navs/DropzoneHQNav.jsx';
-import "react-table/react-table.css";
 
 import RequestHandler from '../RequestHandler.js';
 import Binder from '../Binder.js';
