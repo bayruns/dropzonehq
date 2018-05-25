@@ -14,11 +14,6 @@ import DropzoneHQNav from '../Navs/DropzoneHQNav.jsx';
 import RequestHandler from '../RequestHandler.js';
 import Binder from '../Binder.js';
 
-const marginStyle = {
-    marginTop: 25,
-    marginBottom: 25
-};
-
 var count = 0;
 
 // values coming from Item_types table in db
@@ -879,7 +874,7 @@ export default class InventoryScreen extends React.Component {
                         <DropzoneHQNav />
                     </div>
                 </div>
-                <div style={marginStyle}>
+                <div >
                     <div lg={{ size: 5, offset: 1 }}>
                         <ItemTable
                             columns={this.state.columns}

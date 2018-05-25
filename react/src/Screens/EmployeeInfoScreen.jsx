@@ -9,12 +9,6 @@ import RentalStatDisplay from '../StatDisplays/RentalStatDisplay.jsx';
 
 import DropzoneHQNav from '../Navs/DropzoneHQNav.jsx';
 
-const marginStyle = {
-    marginTop: 25,
-    marginBottom: 25
-
-};
-
 export default class EmployeeInfoScreen extends React.Component {
 
     render() {
@@ -25,7 +19,7 @@ export default class EmployeeInfoScreen extends React.Component {
                         <DropzoneHQNav/>
                     </div>
                 </div>
-                <div style={marginStyle}>
+                <div>
                     <div lg={{ size: 10, offset: 1 }}>
                         <div>
                             <div>Employee Info</div>
@@ -45,7 +39,7 @@ export default class EmployeeInfoScreen extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div style={marginStyle}>
+                <div >
                     <div lg={{ size: 10, offset: 1 }}>
                         <ChangeScreenButton screen={<EmployeeInfoScreen />}
                             changeScreen={this.props.changeScreen}

@@ -5,7 +5,8 @@ import StatDisplay from './StatDisplay.jsx';
 export default class RentalStatDisplay extends React.Component {
     constructor(props) {
         super(props);
-        
+        this.state={};
+
     }  
 
     render() {

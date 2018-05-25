@@ -5,11 +5,6 @@ import BlankItemDisplay from '../ItemDisplays/BlankItemDisplay.jsx';
 import DropzoneHQNav from '../Navs/DropzoneHQNav.jsx';
 import Binder from '../Binder.js';
 
-const marginStyle = {
-    marginTop: 25,
-    marginBottom: 25
-};
-
 class RentalScreen extends React.Component {
 
     constructor(props) {
@@ -53,7 +48,7 @@ class RentalScreen extends React.Component {
                         <DropzoneHQNav/>
                     </div>
                 </div>
-                <div style={marginStyle}>
+                <div >
                     <div lg={{ size: 5, offset: 1 }}>
                         <RentalTable displayChange={this.displayChange} resetDisplay={this.resetDisplay}/>
                     </div>

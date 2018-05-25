@@ -5,7 +5,7 @@ import StatDisplay from './StatDisplay.jsx';
 export default class BioStatDisplay extends React.Component {
     constructor(props) {
         super(props);
-        
+        this.state={};
     }
 
     render() {

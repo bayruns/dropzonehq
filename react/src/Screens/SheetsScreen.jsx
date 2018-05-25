@@ -4,11 +4,6 @@ import Rigsheet from '../Tables/Rigsheet.jsx';
 import RigAlertsContainer from '../RigAlertsContainer.jsx';
 import DropzoneHQNav from '../Navs/DropzoneHQNav.jsx';
 
-const marginStyle = {
-    marginTop: 25,
-    marginBottom: 25
-};
-
 /*
     SheetsScreen is a view for seeing the tandem and
     student rigsheets, any errors/reports for rigs that
@@ -27,7 +22,7 @@ export default class SheetsScreen extends React.Component {
                         <DropzoneHQNav/>
                     </div>
                 </div>
-                <div style={marginStyle}>
+                <div >
                     <div lg={{ size: 5, offset: 1 }}>
                         <Rigsheet title={"Tandem Signouts"} sheetType="tandem" />
                     </div>
@@ -35,7 +30,7 @@ export default class SheetsScreen extends React.Component {
                          <Rigsheet title={"Student Signouts"} sheetType="student"/>
                     </div>
                 </div>
-                <div style={marginStyle}>
+                <div >
                     <div lg={{ size: 10, offset: 1 }}>
                         <RigAlertsContainer/>
                     </div>

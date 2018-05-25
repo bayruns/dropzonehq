@@ -3,12 +3,6 @@ import React from 'react';
 import EmployeeTable from '../Tables/EmployeeTable.jsx';
 import DropzoneHQNav from '../Navs/DropzoneHQNav.jsx';
 
-const marginStyle = {
-    marginTop: 25,
-    marginBottom: 25
-
-};
-
 class EmployeeAdminScreen extends React.Component {
     render() {
         return (
@@ -18,7 +12,7 @@ class EmployeeAdminScreen extends React.Component {
                         <DropzoneHQNav/>
                     </div>
                 </div>
-                <div style={marginStyle}>
+                <div>
                     <div lg={{ size: 10, offset: 1 }}>
                         <EmployeeTable />
                     </div>
